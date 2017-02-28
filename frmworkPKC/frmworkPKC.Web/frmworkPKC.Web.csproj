@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="$(MSBuildToolsVersion)" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{457B0410-4862-4DF2-B856-81FB71C93BE8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>frmworkPKC.Web</RootNamespace>
+    <AssemblyName>frmworkPKC.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <PackageRestore>true</PackageRestore>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet Condition="'$(MSBuildToolsVersion)' &gt;= '14.0'">..\frmworkPKC.Web\frmworkPKC.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\frmworkPKC.Web.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet Condition="'$(MSBuildToolsVersion)' &gt;= '14.0'">..\frmworkPKC.Web\frmworkPKC.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'true' == 'false'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.2.1\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Unofficial.Microsoft.WindowsAzure.Diagnostics.2.7.0.0\lib\net40\Microsoft.WindowsAzure.Diagnostics.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\WindowsAzure.Storage.7.0.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'$(MSBuildToolsVersion)' &gt;= '14.0'">
+      <ItemGroup>
+        <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.1.12.0\analyzers\SonarAnalyzer.dll" />
+        <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.1.12.0\analyzers\SonarAnalyzer.CSharp.dll" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Enyim.Caching, Version=2.13.0.0, Culture=neutral, PublicKeyToken=cec98615db04012e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EnyimMemcached.2.13\lib\net35\Enyim.Caching.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Enyim.Caching.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Enyim.Caching.Web.1.0.0.1\lib\net40\Enyim.Caching.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Membase, Version=2.14.0.0, Culture=neutral, PublicKeyToken=cec98615db04012e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Membase.2.14\lib\net35\Membase.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.Edm.5.7.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.OData.5.7.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.Services.Client.5.7.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Swashbuckle.Core.5.3.2\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Spatial.5.7.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'glimpse' == 'glimpse'">
+      <ItemGroup>
+        <Reference Include="Glimpse.Ado, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Glimpse.Ado.1.7.3\lib\net45\Glimpse.Ado.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Glimpse.AspNet, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Glimpse.AspNet.1.9.2\lib\net45\Glimpse.AspNet.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Glimpse.Core, Version=1.8.6.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Glimpse.1.8.6\lib\net45\Glimpse.Core.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Glimpse.Mvc5, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Content Include="Images\Glimpse_Navigate.PNG">
+        </Content>
+        <Content Include="Images\Home_Page_With_Glimpse.PNG">
+        </Content>
+        <Compile Include="GlimpseSecurityPolicy.cs" />
+      </ItemGroup>
+      <Choose>
+        <When Condition="'sql' != 'mongo'">
+          <ItemGroup>
+            <Reference Include="Glimpse.EF6, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
+              <HintPath>..\..\packages\Glimpse.EF6.1.6.5\lib\net45\Glimpse.EF6.dll</HintPath>
+              <Private>True</Private>
+            </Reference>
+          </ItemGroup>
+        </When>
+      </Choose>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'glimpse' == 'miniprofiler'">
+      <ItemGroup>
+        <Reference Include="MiniProfiler, Version=3.2.0.157, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\MiniProfiler.3.2.0.157\lib\net40\MiniProfiler.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="MiniProfiler.Mvc, Version=3.0.11.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\MiniProfiler.MVC4.3.0.11\lib\net40\MiniProfiler.Mvc.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+      </ItemGroup>
+      <Choose>
+        <When Condition="'' == 'miniprofilersql'">
+          <ItemGroup>
+            <Reference Include="MiniProfiler.EntityFramework6, Version=3.0.11.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+              <HintPath>..\..\packages\MiniProfiler.EF6.3.0.11\lib\net40\MiniProfiler.EntityFramework6.dll</HintPath>
+              <Private>True</Private>
+            </Reference>
+          </ItemGroup>
+        </When>
+      </Choose>
+      <Choose>
+        <When Condition="'' == 'dbsupportmysql'">
+          <ItemGroup>
+            <Reference Include="MiniProfiler.Integrations, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0e789b781a1e1dbb, processorArchitecture=MSIL">
+              <HintPath>..\..\packages\MiniProfiler.Integrations.2.0.1\lib\MiniProfiler.Integrations.dll</HintPath>
+              <Private>True</Private>
+            </Reference>
+            <Reference Include="MiniProfiler.Integrations.MySql, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0e789b781a1e1dbb, processorArchitecture=MSIL">
+              <HintPath>..\..\packages\MiniProfiler.Integrations.MySql.1.0.1\lib\MiniProfiler.Integrations.MySql.dll</HintPath>
+              <Private>True</Private>
+            </Reference>
+          </ItemGroup>
+        </When>
+      </Choose>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'' == 'Alliance PIWIK'">
+      <ItemGroup>
+        <Reference Include="Piwik.Analytics, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Piwik.Analytics.0.2.0.0\lib\net40\Piwik.Analytics.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Piwik.Tracker, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Piwik.Tracker.2.8.0.0\lib\net40\Piwik.Tracker.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'true' == 'false'">
+      <ItemGroup>
+        <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\MySql.Data.6.9.8\lib\net45\MySql.Data.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="MySql.Data.Entity.EF6, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\MySql.Data.Entity.6.9.8\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'true' == 'false'">
+      <ItemGroup>
+        <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Oracle.ManagedDataAccess.12.1.24160419\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Oracle.ManagedDataAccess.EntityFramework.12.1.2400\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'ninject' == 'unityconfigxml'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Unity.Mvc5, Version=1.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Unity.Mvc5.1.2.3\lib\net45\Unity.Mvc5.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Unity.WebApi, Version=5.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Unity.WebAPI.5.2.3\lib\net45\Unity.WebApi.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Compile Include="App_Start\UnityConfig.cs" />
+        <Content Include="Unity.Config.tt">
+          <Generator>TextTemplatingFileGenerator</Generator>
+        </Content>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'ninject' == 'ninject'">
+      <ItemGroup>
+        <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Content Include="NInject.tt">
+          <Generator>TextTemplatingFileGenerator</Generator>
+          <LastGenOutput>NInject.cs</LastGenOutput>
+          <LastOutputs>.\App_Start\DependencyInjectionConfig.cs</LastOutputs>
+        </Content>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'ninject' == 'castlewindsor'">
+      <ItemGroup>
+        <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Compile Include="Infrastructure\WindsorControllerFactory.cs" />
+        <Content Include="CastleWindsor.tt">
+          <Generator>TextTemplatingFileGenerator</Generator>
+        </Content>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'ninject' == 'unityclass'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Unity.Mvc5, Version=1.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Unity.Mvc5.1.2.3\lib\net45\Unity.Mvc5.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Unity.WebApi, Version=5.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Unity.WebAPI.5.2.3\lib\net45\Unity.WebApi.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Content Include="UnityConfig.tt">
+          <Generator>TextTemplatingFileGenerator</Generator>
+        </Content>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'nlog' == 'nlog'">
+      <ItemGroup>
+        <Content Include="NLog.config" />
+        <Content Include="NLog.xsd">
+          <SubType>Designer</SubType>
+        </Content>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'nlog' == 'log4net'">
+      <ItemGroup>
+        <Content Include="log4Net.config" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DependencyInjectionConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="NInject.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NInject.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'false' == 'false'">
+      <Choose>
+        <When Condition="'true' == 'true'">
+          <ItemGroup>
+            <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+              <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+              <Private>True</Private>
+            </Reference>
+            <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+              <HintPath>..\..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+              <Private>True</Private>
+            </Reference>
+            <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+              <HintPath>..\..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+              <Private>True</Private>
+            </Reference>
+            <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+              <HintPath>..\..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+              <Private>True</Private>
+            </Reference>
+            <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+              <HintPath>..\..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+              <Private>True</Private>
+            </Reference>
+          </ItemGroup>
+        </When>
+      </Choose>
+      <ItemGroup>
+        <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Owin">
+          <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+      <Choose>
+        <When Condition="'sqlauth' != 'epamsso'">
+          <ItemGroup>
+            <Compile Include="App_Start\ApplicationSignInManager.cs" />
+            <Compile Include="App_Start\ApplicationUserManager.cs" />
+            <Compile Include="App_Start\Startup.Auth.cs" />
+            <Compile Include="Controllers\AccountController.cs" />
+            <Compile Include="Controllers\ManageController.cs" />
+            <Compile Include="Models\ApplicationUser.cs" />
+            <Compile Include="Models\ChallengeResult.cs" />
+            <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+            <Content Include="Views\Account\ConfirmEmail.cshtml" />
+            <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+            <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+            <Content Include="Views\Account\ForgotPassword.cshtml" />
+            <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+            <Content Include="Views\Account\Login.cshtml" />
+            <Content Include="Views\Account\Register.cshtml" />
+            <Content Include="Views\Account\ResetPassword.cshtml" />
+            <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+            <Content Include="Views\Account\SendCode.cshtml" />
+            <Content Include="Views\Account\VerifyCode.cshtml" />
+            <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+            <Content Include="Views\Manage\ChangePassword.cshtml" />
+            <Content Include="Views\Manage\Index.cshtml" />
+            <Content Include="Views\Manage\ManageLogins.cshtml" />
+            <Content Include="Views\Manage\SetPassword.cshtml" />
+            <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+          </ItemGroup>
+        </When>
+      </Choose>
+      <ItemGroup>
+        <Compile Include="Startup.cs" />
+        <Compile Include="Models\EmailService.cs" />
+        <Compile Include="Models\SmsService.cs" />
+        <Compile Include="Models\AddPhoneNumberViewModel.cs" />
+        <Compile Include="Models\ChangePasswordViewModel.cs" />
+        <Compile Include="Models\ConfigureTwoFactorViewModel.cs" />
+        <Compile Include="Models\ExternalLoginConfirmationViewModel.cs" />
+        <Compile Include="Models\ExternalLoginListViewModel.cs" />
+        <Compile Include="Models\FactorViewModel.cs" />
+        <Compile Include="Models\ForgotPasswordViewModel.cs" />
+        <Compile Include="Models\ForgotViewModel.cs" />
+        <Compile Include="Models\IndexViewModel.cs" />
+        <Compile Include="Models\LoginViewModel.cs" />
+        <Compile Include="Models\ManageLoginsViewModel.cs" />
+        <Compile Include="Models\RegisterViewModel.cs" />
+        <Compile Include="Models\ResetPasswordViewModel.cs" />
+        <Compile Include="Models\SendCodeViewModel.cs" />
+        <Compile Include="Models\SetPasswordViewModel.cs" />
+        <Compile Include="Models\VerifyCodeViewModel.cs" />
+        <Compile Include="Models\VerifyPhoneNumberViewModel.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Content Include="Views\Shared\Lockout.cshtml" />
+        <Content Include="Views\Shared\_LoginPartial.cshtml" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'' == 'Alliance PIWIK'">
+      <ItemGroup>
+        <Compile Include="Filters\PiwikAttribute.cs" />
+        <Compile Include="Helpers\PiwikHelper.cs" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'$(MSBuildToolsVersion)' &gt;= '14.0'">
+      <ItemGroup>
+        <Content Include="frmworkPKC.ruleset" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Gruntfile.js" />
+    <Content Include="karma.conf.js" />
+    <Content Include="TestScripts\DefaultTest.js" />
+    <Content Include="TestScripts\test.js" />
+    <Content Include="lib\Model.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Hyper_In_New_Projects_List.PNG">
+    </Content>
+    <Content Include="Images\Installer_Image.PNG">
+    </Content>
+    <Content Include="Images\List_Of_Projects.PNG">
+    </Content>
+    <Content Include="Images\Repositories.png">
+    </Content>
+    <Content Include="Images\Repository_Folders.PNG">
+    </Content>
+    <Content Include="Images\Run_Custom_Tools.png">
+    </Content>
+    <Content Include="Images\Services.png">
+    </Content>
+    <Content Include="Images\Services_Folders.PNG">
+    </Content>
+    <Content Include="Images\Set_Start_Up.png">
+    </Content>
+    <Content Include="Images\Swagger_Navigate.PNG">
+    </Content>
+    <Content Include="Images\T4Success_Message.PNG">
+    </Content>
+    <Content Include="Images\Template_Customizations.PNG">
+    </Content>
+    <Content Include="Images\Template_Open.PNG">
+    </Content>
+    <Content Include="Images\Transform_All.png">
+    </Content>
+    <Content Include="Images\UnitTests.png">
+    </Content>
+    <Content Include="Images\UnitTests_Folders.PNG">
+    </Content>
+    <Content Include="Images\UnityConfig.png">
+    </Content>
+    <Content Include="Images\UnityConfig_File.PNG">
+    </Content>
+  </ItemGroup>
+  <Choose>
+    <When Condition=" 'None' == 'AngularJS 1' ">
+      <ItemGroup>
+        <Content Include="Scripts\angular-mocks.js" />
+        <Content Include="Scripts\angular.js" />
+        <Content Include="Scripts\angular.min.js" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'' == 'Alliance PIWIK'">
+      <ItemGroup>
+        <Content Include="Scripts\angulartics-piwik.js" />
+        <Content Include="Scripts\angulartics-piwik.min.js" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition=" 'None' == 'BackboneJS' ">
+      <ItemGroup>
+        <Content Include="Scripts\backbone.min.map" />
+        <Content Include="Scripts\backbone.js" />
+        <Content Include="Scripts\backbone.min.js" />
+        <None Include="Scripts\jquery-1.7.1-vsdoc.js" />
+        <Content Include="Scripts\jquery-1.7.1.js" />
+        <Content Include="Scripts\jquery-1.7.1.min.js" />
+        <Content Include="Scripts\underscore.js" />
+        <Content Include="Scripts\underscore.min.js" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'true' == 'false'">
+      <ItemGroup>
+        <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+        <Content Include="Scripts\jquery-1.10.2.js" />
+        <Content Include="Scripts\jquery-1.10.2.min.js" />
+        <None Include="Scripts\jquery.validate-vsdoc.js" />
+        <Content Include="Scripts\jquery.validate.js" />
+        <Content Include="Scripts\jquery.validate.min.js" />
+        <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+        <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+        <Content Include="Scripts\modernizr-2.6.2.js" />
+        <Content Include="Scripts\respond.js" />
+        <Content Include="Scripts\respond.min.js" />
+        <Content Include="Scripts\_references.js" />
+        <Content Include="Scripts\jquery-1.10.2.min.map" />
+        <Content Include="Content\bootstrap.css" />
+        <Content Include="Content\bootstrap.min.css" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Content Include="Style.css" />
+    <Content Include="package.json" />
+    <Content Include="Manager.ttinclude" />
+    <Content Include="Scripts\errors.json" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="VisualStudioHelper.ttinclude" />
+    <Content Include="Scripts\version.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'false' == 'false'">
+      <ItemGroup>
+        <ProjectReference Include="..\Framework\frmworkPKC.Repository.Ef6\frmworkPKC.Repository.Ef6.csproj">
+          <Project>{f68a1d19-93fb-47c1-a22b-42bea3e4fd8c}</Project>
+          <Name>frmworkPKC.Repository.Ef6</Name>
+        </ProjectReference>
+        <Reference Include="EntityFramework, Version=6.1.3.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+        </Reference>
+        <Reference Include="EntityFramework.SqlServer">
+          <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Data" />
+        <Reference Include="System.Data.DataSetExtensions" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'false' == 'false'">
+      <ItemGroup>
+        <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'sqlauth' == 'sqlauth'">
+      <ItemGroup>
+        <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="System.Data.Entity" />
+        <Compile Include="Models\ApplicationDbContext.cs" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'sqlauth' == 'mysqlauth'">
+      <ItemGroup>
+        <Content Include="AspnetIdentitytableSetup.sql" />
+        <Reference Include="MySql.AspNet.Identity, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\MySql.AspNet.Identity.2.1.1\lib\net45\MySql.AspNet.Identity.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'true' == 'false'">
+      <Choose>
+        <When Condition="'sqlauth' == 'mongoauth'">
+          <ItemGroup>
+            <Reference Include="MongoDB.AspNet.Identity, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+              <HintPath>..\..\packages\Mongo.AspNet.2.4.0\lib\net45\MongoDB.AspNet.Identity.dll</HintPath>
+              <Private>True</Private>
+            </Reference>
+            <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+              <HintPath>..\..\packages\Mongo.AspNet.2.4.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+            </Reference>
+          </ItemGroup>
+        </When>
+      </Choose>
+      <ItemGroup>
+        <Reference Include="MongoDB.Bson">
+          <HintPath>..\..\packages\MongoDB.Bson.2.3.0\lib\net45\MongoDB.Bson.dll</HintPath>
+        </Reference>
+        <Reference Include="MongoDB.Driver">
+          <HintPath>..\..\packages\MongoDB.Driver.2.3.0\lib\net45\MongoDB.Driver.dll</HintPath>
+        </Reference>
+        <Reference Include="MongoDB.Driver.Core">
+          <HintPath>..\..\packages\MongoDB.Driver.Core.2.3.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="MongoDB.Driver.Legacy">
+          <HintPath>..\..\packages\mongocsharpdriver.2.3.0\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+        </Reference>
+        <ProjectReference Include="..\frmworkPKC.Repository.Mongo\frmworkPKC.Repository.Mongo.csproj">
+          <Project>{47c2efa4-5498-456f-9150-b4866bd3d860}</Project>
+          <Name>frmworkPKC.Repository.Mongo</Name>
+        </ProjectReference>
+        <Compile Include="Models\ApplicationDbContext.cs" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <ProjectReference Include="..\frmworkPKC.Entities\frmworkPKC.Entities.csproj">
+      <Project>{294373a1-ec19-4ebe-80cb-66fc4e18d8e0}</Project>
+      <Name>frmworkPKC.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\frmworkPKC.Repository\frmworkPKC.Repository.csproj">
+      <Project>{c069608e-ead7-4846-9948-eb16b556e61d}</Project>
+      <Name>frmworkPKC.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\frmworkPKC.Services\frmworkPKC.Services.csproj">
+      <Project>{aa904a83-e9d5-4003-b521-6b5b396e2e7b}</Project>
+      <Name>frmworkPKC.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\frmworkPKC.Repository.Pattern\frmworkPKC.Repository.Pattern.csproj">
+      <Project>{6e682a14-c872-4813-b620-76e108dea683}</Project>
+      <Name>frmworkPKC.Repository.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\frmworkPKC.Service.Pattern\frmworkPKC.Service.Pattern.csproj">
+      <Project>{86f86650-ee3c-4372-8fec-40c2fe015022}</Project>
+      <Name>frmworkPKC.Service.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\frmworkPKC.Common\frmworkPKC.Common.csproj">
+      <Project>{23812aa4-893c-44f5-807f-12201dbfda48}</Project>
+      <Name>frmworkPKC.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'applicationinsights' == 'applicationinsights'">
+      <ItemGroup>
+        <None Include="ApplicationInsights.config">
+        </None>
+        <Reference Include="Microsoft.AI.Agent.Intercept">
+          <HintPath>..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.AI.DependencyCollector">
+          <HintPath>..\..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.AI.PerfCounterCollector">
+          <HintPath>..\..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+          <HintPath>..\..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.AI.Web">
+          <HintPath>..\..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.AI.WindowsServer">
+          <HintPath>..\..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.ApplicationInsights">
+          <HintPath>..\..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'sqlauth' == 'epamsso'">
+      <ItemGroup>
+        <Content Include="EpamSSO.txt" />
+        <Reference Include="System.identitymodel.services" />
+        <Compile Include="Implementation\AuthDataManager.cs" />
+        <Compile Include="Controllers\EpamSsoController.cs" />
+        <Content Include="Views\EpamSso\SignIn.cshtml" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53253</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53253/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+</Project>

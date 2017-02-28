@@ -1,0 +1,12 @@
+Hi !! Below are the options you chose
+Database:SQL Server
+Dependency Injection: NInject
+Test Framework: MSTest
+Mock Framework: NSubstitute
+SPA: No
+UI: None
+Authentication: OAuth
+Logging: NLog
+CDN: Yes
+Profiling: Glimpse
+Insights: Application Insights

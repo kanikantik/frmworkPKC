@@ -1,0 +1,361 @@
+﻿<head>
+    <title>Project_Readme File</title>
+    <link href="Style.css" rel="stylesheet" />
+</head>
+<body>
+    <h1 align="center">README</h1>
+    <h1><a id="_Toc330287069">1.Hyper</a></h1>
+
+    <p>Hyper is a Visual Studio template created using Visual Studio which speeds up the development activities.</p>
+
+    <h2>1.1 InsideEdge Hyper Development Platform Version Details</h2>
+
+    <p><b>InsideEdge Hyper Development Platform Release Version</b>: 0.1</p>
+
+    <p><b>Release Date</b>: TBD</p>
+
+    <h2>1.2 Highlights of the Release</h2>
+    <p>The New Hyper Development Platform v1.0 has the following features:</p>
+    <ul>
+        <li>Pre Added Repository, Service, Web and Tests Projects.</li>
+        <li>Option to customize the project preferences.</li>
+        <!--<li>Creation of Azure Project on selection.</li>-->
+        <li>Sql,MySql and MongoDB(No SQL) are included in the project.</li>
+        <li>T4 templates for creating the Interfaces, Repositories and Services classes with basic code included.</li>
+        <li>SPA is provided as a option if we select AngularJS as UI framework</li>
+        <li>NUnit and MSTest Test Frameworks are included in the project</li>
+        <li>MOQ and NSubstitute Test Mock frameworks are included in the project</li>
+        <li>Unity,Castle Windsor and NInject are included for Dependency Injection in the project.</li>
+        <li><a href="#Logging">Logging</a></li>
+        <li><a href="#Application_Insights">Application Insights</a></li>
+        <li><a href="#NewRelic">New Relic</a></li>
+        <!--<li>Included Piwik / Google Analytics and Glimpse for Client Side and Server Analytics respectively.</li>-->
+        <li><a href="#Glimpse">Glimpse</a></li>
+        <li><a href="#MiniProfiler">MiniProfiler</a></li>
+        <li><a href="#Swagger">Swagger</a></li>
+        <li><a href="#Epam_SSO">Epam SSO</a></li>
+        <li><a href="#Sonar_Analyzer">Sonar Analyzer</a></li>
+    </ul>
+
+    <h1>2.System Requirements</h1>
+
+    <h2><a id="_Software_Requirements"></a>2.1 Software Requirements</h2>
+    <ul>
+        <li>Visual Studio 2015 / 2013.</li>
+        <li><a href="https://www.microsoft.com/en-in/download/details.aspx?id=42642">Net Framework 4.5.2</a> or higher </li>
+        <li>T4 tool box - For <a href="https://visualstudiogallery.msdn.microsoft.com/791817a4-eb9a-4000-9c85-972cc60fd5aa">VS2013</a> / For VS <a href="https://visualstudiogallery.msdn.microsoft.com/34b6d489-afbc-4d7b-82c3-dded2b726dbc">2015</a></li>
+        <!--<li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=48178">Azure 2.7</a></li>-->
+        <li><a href="https://nodejs.org/en/download/">Node Js</a> for swagger code generation </li>
+        <li>Mongo DB / SQL for back end data base </li>
+        <!--<li>Piwik site if Piwik Analytics are required.</li>-->
+    </ul>
+
+    <h2><a id="_Toc330287072"></a><a id="_Toc328563660">2.2 Supported Architecture</a></h2>
+    <ul>
+        <li>32-bit (x86)</li>
+        <li>64-bit (x64)</li>
+    </ul>
+
+    <h1><a id="_Toc330287074">3.Detailed Information</a><a id="_Toc330287075"></a></h1>
+
+    <h2>3.1 Working with the Template</h2>
+
+    <ul>
+        <li>Please install all the items mentioned in the <a href="#_Software_Requirements">requirements</a> section before you starting working on the template, so that there will be no errors once you start working with the template. </li>
+        <li>
+            Close all the Visual Studio instances and double click the installer.
+            <br /><br />
+            <img src="images/installer_image.png" alt="Installer Image" /> &nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="images/template_open.png" alt="Template_Open" />
+        </li>
+        <li>
+            Once it is successfully installed, once visual studio and click on create new project.
+            <br /><br />
+
+
+        </li>
+        <li>
+            In C# and .Net 4.5.2, you can see the Epam Hyper Web Application template, click that template and give the project name and location and click ok.
+            <br /><br />
+            <img src="images/hyper_in_new_projects_list.png" alt="Hyper in New Projects List" />
+        </li>
+        <li>
+            You will be navigated to customizations window, where you can select the Cloud Deployment, Unit test projects, UI Framework, Analytics and Underlying DB.
+            <br /><br />
+            <img src="images/template_customizations.png" alt="Customizations" />
+        </li>
+        <li>
+            Once the customizations are completed, click on finish and it will create the projects that were explained in the <a href="#_Included_Projects">
+                next section.
+            </a>
+            <br /><br />
+            <img src="images/list_of_projects.png" alt="List of Projects" />
+        </li>
+        <li>
+            Scaffolding through T4 templates:
+            <br /><br />
+            <img src="images/services.png" alt="Services" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="images/unittests.png" alt="Unit Tests" /><br /><br />
+            <img src="images/unityconfig.png" alt="UnityConfig" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="images/repositories.png" alt="Repositories" />
+        </li>
+        <li>There are T4 templates included in the application in Repositories, Services, Web and Service Unit test Projects. </li>
+        <li>Once the entity is created, by running the T4 templates the respective Repository, Services, Unit test and dependency injections will be created based on the entity name. </li>
+        <li>
+            By default two entities are added in the Entities Project if SQL Server is selected as the underlying database and one entity is added if Mongo is selected.
+            <br /><br />
+            <img src="images/repository_folders.png" alt="Repository_folders" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="images/services_folders.png" alt="Srvices_folders" />
+        </li>
+        <li>Go to Repository Project, right click Repositories.tt file and click Run Custom Tool two folders will be created one for the interfaces and one for repositories with the files. </li>
+        <li>
+            In the same way run the tool that are in Services, Web and Unit Tests files.
+            <br /><br />
+            <img src="images/unityconfig_file.png" alt="UnityConfig File" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="images/unittests_folders.png" alt="Unit Tests" />
+        </li>
+        <li>You can run all the templates once by going to Build -&gt; Transform All Templates. </li>
+        <li>Once the templates are run, build the application to restore the nuget packages. </li>
+        <li>
+            On success build, set the Web Project as the startup project (Right click on Web and Set as StartUp Project) and run the application.
+            <br /><br />
+            <img src="images/home_page_with_glimpse.png" alt="Glimpse" />
+        </li>
+        <li>
+            Once the application opens in the browser and navigates to the default ASP.Net Page, you can see <a href="#_Glimpse">
+                Glimpse
+            </a> at the bottom.
+            <br /><br />
+            <img src="images/glimpse_navigate.png" alt="Glimpse" />
+        </li>
+        <li>
+            Navigate to <a href="http://localhost:67833/swagger">http://localhost:67833/swagger</a> , to navigate to swagger. Working on Swagger is described in this <a href="#_Swagger">section</a>.
+            <br /><br />
+            <img src="images/swagger_navigate.png" alt="Swagger" />
+        </li>
+    </ul>
+
+    <h2><a id="_Included_Projects"></a>3.2 Included Projects</h2>
+
+    <table border="1" cellspacing="2" cellpadding="2">
+        <tbody>
+            <tr style="background-color:#a2a2c3">
+                <td><p><b>Project Name</b></p></td>
+                <td><p><b>Description</b></p></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>frmworkPKC.Common</p>
+
+                </td>
+                <td>
+                    <p>It has the different attributes and filters that can be used in any project.</p>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>frmworkPKC.Repository.Pattern</p>
+
+                </td>
+                <td>
+                    <p>frmworkPKC.Repository.Pattern is the main project in which the data context and the unit of work are defined and the Repository interface are defined that will be consumed by the EF6 and Mongo Projects.</p>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>frmworkPKC.Repository.Ef6</p>
+
+                </td>
+                <td>
+                    <p>This has the methods that are related to Entity Framework.</p>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>frmworkPKC.Repository.Mongo</p>
+
+                </td>
+                <td>
+                    <p>This has the methods that are related to Entity Framework.</p>
+
+                    <p>This has the methods related to Mongo.</p>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>frmworkPKC.Service.Pattern</p>
+
+                </td>
+                <td><p>This contains IService interface and Service class and these will be inherited by the Service classes.</p></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Entities</p>
+
+                </td>
+                <td>
+                    <p>Both Mongo Entity and EF6 Entity will be added here</p>
+
+                    <p>Mongo entity will be extended with a MongoEntity class whereas Entity is extended with an Entity class.</p>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Repository</p>
+
+                </td>
+                <td>
+                    <p>It includes both the repositories of EF6 and Mongo and these will be injected directly into the Services classes.</p>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Services</p>
+
+                </td>
+                <td><p>This acts as a bridge between Web and the Repository Projects.</p></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Web</p>
+
+                </td>
+                <td>
+                    <p>This is the MVC Web Application.</p>
+
+                </td>
+            </tr>
+            <!--<tr>
+                <td>
+                    <p>Azure</p>
+
+                </td>
+                <td>
+                    <p>This has the web project linked on creation. Once you have the credentials of Azure you can directly deploy the code to Cloud.</p>
+
+                </td>
+            </tr>-->
+            <tr>
+                <td>
+                    <p>Test Projects</p>
+
+                </td>
+                <td>
+                    <p>Two test projects are included in the solution. </p>
+
+                    <p>One for the Web Project and the other for Services Project.</p>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <h2>3.3 Additional Features</h2>
+
+    <!--<h3>3.3.1 Piwik Analytics</h3>
+    <ul>
+        <li>This is helpful to calculate the browser analytics for the application. </li>
+        <li>The Web Project contains a Piwik Attribute and Piwik Helper, if the user needs to track any data in the controllers.</li>
+        <li>If you want to work with the Piwik Filter and Piwik Helper, you need to add values for tokenAuth, siteId and piwikUrl in Web.config in Web Project. </li>
+        <li>For more info visit <a href="http://piwik.org/">Piwik</a> site. </li>
+    </ul>
+
+    <h3>3.3.2 Google Analytics</h3>
+    <ul>
+        <li>If Google Analytics is selected, a script is added which will help in getting the browser analytics through Google Analytics. </li>
+        <li>For more details, visit the <a href="https://www.google.co.in/analytics/">website</a>.</li>
+    </ul>-->
+
+    <h3><a id="Glimpse"></a>3.3.1 Glimpse</h3>
+
+    <ul>
+        <li>This is a developer tool which helps to understand the server side analytics like the time taken by the method, what are the different views it is calling. </li>
+        <li>Glimpse will be on by default in the application. </li>
+        <li>You can make it off, by changing the RunTimePolicy in GlimpseSecurityPolicy.cs file in the Web Project. </li>
+        <li>For more information, visit website</li>
+    </ul>
+    <h3><a id="MiniProfiler"></a>3.3.2 MiniProfiler</h3>
+
+    <ul>
+        <li>MiniProfiler is a tool created and used by the StackExchange group of websites and is used for profiling your .NET and Ruby applications.</li>
+        <li>MiniProfiler.Integrations.MySql 1.0.1 reference is added to project if MySql and DatabaseSupport are selected</li>
+        <li>For more information visit http://miniprofiler.com/ </li>
+    </ul>
+
+    <h3 id="Swagger">3.3.3 Swagger</h3>
+    <ul>
+        <li>Swagger is used to represent the Rest API controller methods. </li>
+        <li>If you have node js installed in your machine, you can generate client side script through Swagger code, which will be explained below.</li>
+        <li>Before you go through the steps of Code Generation, check I you have node js installed in your machine.</li>
+        <li>Once node js is installed, below are the steps to generate code through Swagger.</li>
+        <li>Open command Prompt, navigate to the Web folder. If you use VS 2015, node_modules are downloaded by default else run the command ‘npm install’ in the command prompt.</li>
+        <li>After the command execution is completed successfully, run the command ‘npm install -g grunt-cli’.</li>
+        <li>Once grunt is installed, run the command ‘grunt default’. It creates a new file Model.js in lib folder.</li>
+    </ul>
+
+    <h3 id="Sonar_Analyzer">3.3.4 Sonar Analyzer</h3>
+
+    <ul>
+        <li>This plugin enables the analysis of C# source files contained in .NET projects.</li>
+        <li>With the help of this plugin, a rule set is created which behaves as a code quality check for the programmer.</li>
+        <li>The rule set shows the critical and blocker violations as build errors so that the developer fixes them. </li>
+    </ul>
+
+    <h3 id="Epam_SSO">3.3.5 EPAM SSO</h3>
+    <ul>
+        Steps to work with EPAM SSO:
+        <li>Hyper is registered with the following url with epam SSO - https://localhost:44310</li>
+
+        <li>Please go to Web Project -> Properties -> Web and change the project url to https://localhost:44310</li>
+
+        <li>Run the T4 templates and build the application.</li>
+
+        <li>Set Web Project as the start up project and run the applciation.</li>
+
+        <li>Once the home page is loaded, Click on the Menu Link EPAM SSO.</li>
+
+        <li>It logs in with the current logged in epam user and the user name can be viewed on the page.</li>
+    </ul>
+
+    <h3 id="Application_Insights">3.3.6 Application Insights</h3>
+
+    <ul>
+        <li>Application Insights is an extensible Application Performance Management (APM) service for web developers</li>
+        <li>It works for apps on a wide variety of platforms including .NET, Node.js and J2EE, hosted on-premises or in the cloud.</li>
+        <li>For more information please visit https://azure.microsoft.com/en-in/services/application-insights/ </li>
+    </ul>
+
+    <h3 id="NewRelic">3.3.7  New Relic</h3>
+    <ul>
+        <li>The New Relic Digital Intelligence Platform provides actionable insights to drive digital business results</li>
+        <li>New Relic version </li>
+        <li>For more information please visit https://newrelic.com/ </li>
+    </ul>
+    <h3 id="Logging">3.3.8  Logging</h3>
+    <ul>
+        <li>NLog, Log4Net, CustomLogging, NoLogging are included as options in the template.</li>
+        <li>A folder named logs is created in the Web Project when use this logging.</li>
+    </ul>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p><a id="_Toc330287078"></a></p>
+</body>

@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17909AC1-9E09-4E90-BE78-D384CAC14779}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>frmworkPKC.UnitTest</RootNamespace>
+    <AssemblyName>frmworkPKC.UnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'glimpse' == 'glimpse'">
+      <ItemGroup>
+        <Reference Include="Glimpse.Ado, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Glimpse.Ado.1.7.3\lib\net45\Glimpse.Ado.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Glimpse.AspNet, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Glimpse.AspNet.1.9.2\lib\net45\Glimpse.AspNet.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Glimpse.Core, Version=1.8.6.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Glimpse.1.8.6\lib\net45\Glimpse.Core.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Glimpse.Mvc5, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+      </ItemGroup>
+      <Choose>
+        <When Condition="'false' == 'false'">
+          <ItemGroup>
+            <Reference Include="Glimpse.EF6, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
+              <HintPath>..\..\packages\Glimpse.EF6.1.6.5\lib\net45\Glimpse.EF6.dll</HintPath>
+              <Private>True</Private>
+            </Reference>
+          </ItemGroup>
+        </When>
+      </Choose>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'true' == 'true'">
+      <Choose>
+        <When Condition="'nsubstitute' == 'none'">
+          <ItemGroup>
+            <Compile Include="AppStartTests.cs" />
+            <Compile Include="UnityConfigTests.cs" />
+          </ItemGroup>
+        </When>
+      </Choose>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'ninject' == 'unityclass'">
+      <ItemGroup>
+        <Reference Include="Unity.Mvc5, Version=1.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Unity.Mvc5.1.2.3\lib\net45\Unity.Mvc5.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'ninject' == 'unityconfigxml'">
+      <ItemGroup>
+        <Reference Include="Unity.Mvc5, Version=1.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Unity.Mvc5.1.2.3\lib\net45\Unity.Mvc5.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'MSTest' == 'MSTest'" />
+  </Choose>
+  <Choose>
+    <When Condition="'MSTest' == 'NUnit'">
+      <ItemGroup>
+        <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'NSubSql' == 'MoqSql'">
+      <ItemGroup>
+        <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <ProjectReference Include="..\Framework\frmworkPKC.Repository.Ef6\frmworkPKC.Repository.Ef6.csproj">
+          <Project>{f68a1d19-93fb-47c1-a22b-42bea3e4fd8c}</Project>
+          <Name>frmworkPKC.Repository.Ef6</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'NSubSql' == 'MoqMongo'">
+      <ItemGroup>
+        <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <ProjectReference Include="..\Framework\frmworkPKC.Repository.Mongo\frmworkPKC.Repository.Mongo.csproj">
+          <Project>{47c2efa4-5498-456f-9150-b4866bd3d860}</Project>
+          <Name>frmworkPKC.Repository.Mongo</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'NSubSql' == 'NSubSql'">
+      <ItemGroup>
+        <Reference Include="NSubstitute, Version=1.10.0.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\NSubstitute.1.10.0.0\lib\net45\NSubstitute.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <ProjectReference Include="..\Framework\frmworkPKC.Repository.Ef6\frmworkPKC.Repository.Ef6.csproj">
+          <Project>{f68a1d19-93fb-47c1-a22b-42bea3e4fd8c}</Project>
+          <Name>frmworkPKC.Repository.Ef6</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'NSubSql' == 'NSubMongo'">
+      <ItemGroup>
+        <Reference Include="NSubstitute, Version=1.10.0.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\NSubstitute.1.10.0.0\lib\net45\NSubstitute.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <ProjectReference Include="..\Framework\frmworkPKC.Repository.Mongo\frmworkPKC.Repository.Mongo.csproj">
+          <Project>{47c2efa4-5498-456f-9150-b4866bd3d860}</Project>
+          <Name>frmworkPKC.Repository.Mongo</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'false' == 'false'">
+      <ItemGroup>
+        <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'true' == 'true'">
+      <Choose>
+        <When Condition="'nsubstitute' == 'moq'">
+          <Choose>
+            <When Condition="'false' == 'false'">
+              <ItemGroup>
+                <Reference Include="Microsoft.Owin">
+                  <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+                </Reference>
+                <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+                  <SpecificVersion>False</SpecificVersion>
+                  <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+                </Reference>
+                <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+                  <SpecificVersion>False</SpecificVersion>
+                  <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+                </Reference>
+                <Reference Include="Microsoft.Owin">
+                  <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+                </Reference>
+                <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+                  <SpecificVersion>False</SpecificVersion>
+                  <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+                </Reference>
+              </ItemGroup>
+              <Choose>
+                <When Condition="'sqlauth' != 'epamsso'">
+                  <ItemGroup>
+                    <Compile Include="AccountControllerTests.cs" />
+                    <Compile Include="ApplicationSignInManagerTests.cs" />
+                    <!--<Compile Include="ApplicationUserManagerTests.cs" />-->
+                    <Compile Include="ManageControllerTests.cs" />
+                    <Compile Include="StartUpTests.cs" />
+                  </ItemGroup>
+                </When>
+              </Choose>
+              <ItemGroup>
+                <Compile Include="HomeControllerTests.cs" />
+                <Compile Include="ContactControllerTests.cs" />
+              </ItemGroup>
+            </When>
+          </Choose>
+        </When>
+      </Choose>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'true' == 'true'">
+      <Choose>
+        <When Condition="'nsubstitute' == 'nsubstitute'">
+          <Choose>
+            <When Condition="'false' == 'false'">
+              <ItemGroup>
+                <Reference Include="Microsoft.Owin">
+                  <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+                </Reference>
+                <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+                  <SpecificVersion>False</SpecificVersion>
+                  <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+                </Reference>
+                <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+                  <SpecificVersion>False</SpecificVersion>
+                  <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+                </Reference>
+                <Reference Include="Microsoft.Owin">
+                  <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+                </Reference>
+                <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+                  <SpecificVersion>False</SpecificVersion>
+                  <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+                </Reference>
+                <Compile Include="WebTests\ApplicationSignInManagerTests.cs" />
+                <Compile Include="WebTests\ManageControllerTests.cs" />
+                <Compile Include="WebTests\StartUpTests.cs" />
+              </ItemGroup>
+              <Choose>
+                <When Condition="'true' == 'true'">
+                  <ItemGroup>
+                    <Compile Include="WebTests\WebModelsTests.cs" />
+                  </ItemGroup>
+                </When>
+              </Choose>
+            </When>
+          </Choose>
+        </When>
+      </Choose>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'sqlauth' == 'mysqlauth'">
+      <ItemGroup>
+        <Reference Include="MySql.AspNet.Identity, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\MySql.AspNet.Identity.2.1.1\lib\net45\MySql.AspNet.Identity.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+          <HintPath>..\..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'sqlauth' == 'sqlauth'">
+      <Choose>
+        <When Condition="'false' == 'false'">
+          <ItemGroup>
+            <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+              <SpecificVersion>False</SpecificVersion>
+              <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+            </Reference>
+          </ItemGroup>
+        </When>
+      </Choose>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'true' == 'false'">
+      <Choose>
+        <When Condition="'sqlauth' == 'mongoauth'">
+          <ItemGroup>
+            <Reference Include="MongoDB.AspNet.Identity, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+              <HintPath>..\..\packages\Mongo.AspNet.2.4.0\lib\net45\MongoDB.AspNet.Identity.dll</HintPath>
+              <Private>True</Private>
+            </Reference>
+            <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+              <HintPath>..\..\packages\Mongo.AspNet.2.4.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+            </Reference>
+          </ItemGroup>
+        </When>
+      </Choose>
+      <ItemGroup>
+        <Reference Include="MongoDB.Bson">
+          <HintPath>..\..\packages\MongoDB.Bson.2.3.0\lib\net45\MongoDB.Bson.dll</HintPath>
+        </Reference>
+        <Reference Include="MongoDB.Driver">
+          <HintPath>..\..\packages\MongoDB.Driver.2.3.0\lib\net45\MongoDB.Driver.dll</HintPath>
+        </Reference>
+        <Reference Include="MongoDB.Driver.Core">
+          <HintPath>..\..\packages\MongoDB.Driver.Core.2.3.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="MongoDB.Driver.Legacy">
+          <HintPath>..\..\packages\mongocsharpdriver.2.3.0\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+        </Reference>
+        <ProjectReference Include="..\Framework\frmworkPKC.Repository.Mongo\frmworkPKC.Repository.Mongo.csproj">
+          <Project>{47c2efa4-5498-456f-9150-b4866bd3d860}</Project>
+          <Name>frmworkPKC.Repository.Mongo</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <ProjectReference Include="..\Framework\frmworkPKC.Repository.Pattern\frmworkPKC.Repository.Pattern.csproj">
+      <Project>{6e682a14-c872-4813-b620-76e108dea683}</Project>
+      <Name>frmworkPKC.Repository.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\frmworkPKC.Service.Pattern\frmworkPKC.Service.Pattern.csproj">
+      <Project>{86f86650-ee3c-4372-8fec-40c2fe015022}</Project>
+      <Name>frmworkPKC.Service.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\frmworkPKC.Entities\frmworkPKC.Entities.csproj">
+      <Project>{294373a1-ec19-4ebe-80cb-66fc4e18d8e0}</Project>
+      <Name>frmworkPKC.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\frmworkPKC.Repository\frmworkPKC.Repository.csproj">
+      <Project>{c069608e-ead7-4846-9948-eb16b556e61d}</Project>
+      <Name>frmworkPKC.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\frmworkPKC.Services\frmworkPKC.Services.csproj">
+      <Project>{aa904a83-e9d5-4003-b521-6b5b396e2e7b}</Project>
+      <Name>frmworkPKC.Services</Name>
+    </ProjectReference>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'true' == 'true'">
+      <ItemGroup>
+        <ProjectReference Include="..\frmworkPKC.Web\frmworkPKC.Web.csproj">
+          <Project>{457b0410-4862-4df2-b856-81fb71c93be8}</Project>
+          <Name>frmworkPKC.Web</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <ProjectReference Include="..\..\frmworkPKC.API\frmworkPKC.API.csproj">
+          <Project>{457b0410-4862-4df2-b856-81fb71c93be8}</Project>
+          <Name>frmworkPKC.API</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+</Project>

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="$(MSBuildToolsVersion)" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C069608E-EAD7-4846-9948-EB16B556E61D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>frmworkPKC.Repository</RootNamespace>
+    <AssemblyName>frmworkPKC.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PackageRestore>true</PackageRestore>
+    <TransformOnBuild>true</TransformOnBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet Condition="'$(MSBuildToolsVersion)' &gt;= '14.0'">..\frmworkPKC.Web\frmworkPKC.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet Condition="'$(MSBuildToolsVersion)' &gt;= '14.0'">..\frmworkPKC.Web\frmworkPKC.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(MSBuildToolsVersion)' &gt;= '14.0'">
+      <ItemGroup>
+        <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.1.12.0\analyzers\SonarAnalyzer.dll" />
+        <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.1.12.0\analyzers\SonarAnalyzer.CSharp.dll" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\ICategoryRepository.cs" />
+    <Compile Include="Interfaces\ISupplierRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repositories.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\CategoryRepository.cs" />
+    <Compile Include="Repository\SupplierRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Manager.ttinclude" />
+    <None Include="packages.config" />
+    <None Include="VisualStudioHelper.ttinclude" />
+    <None Include="Repositories.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Repositories.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'false' == 'false'">
+      <ItemGroup>
+        <ProjectReference Include="..\Framework\frmworkPKC.Repository.Ef6\frmworkPKC.Repository.Ef6.csproj">
+          <Project>{f68a1d19-93fb-47c1-a22b-42bea3e4fd8c}</Project>
+          <Name>frmworkPKC.Repository.Ef6</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'true' == 'false'">
+      <ItemGroup>
+        <ProjectReference Include="..\Framework\frmworkPKC.Repository.Mongo\frmworkPKC.Repository.Mongo.csproj">
+          <Project>{47c2efa4-5498-456f-9150-b4866bd3d860}</Project>
+          <Name>frmworkPKC.Repository.Mongo</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <ProjectReference Include="..\frmworkPKC.Entities\frmworkPKC.Entities.csproj">
+      <Project>{294373a1-ec19-4ebe-80cb-66fc4e18d8e0}</Project>
+      <Name>frmworkPKC.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\frmworkPKC.Repository.Pattern\frmworkPKC.Repository.Pattern.csproj">
+      <Project>{6e682a14-c872-4813-b620-76e108dea683}</Project>
+      <Name>frmworkPKC.Repository.Pattern</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+</Project>

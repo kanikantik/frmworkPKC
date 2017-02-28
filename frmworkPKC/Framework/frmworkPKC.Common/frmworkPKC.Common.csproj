@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="$(MSBuildToolsVersion)" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{23812AA4-893C-44F5-807F-12201DBFDA48}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>frmworkPKC.Common</RootNamespace>
+    <AssemblyName>frmworkPKC.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet Condition="'$(MSBuildToolsVersion)' &gt;= '14.0'">..\..\frmworkPKC.Web\frmworkPKC.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet Condition="'$(MSBuildToolsVersion)' &gt;= '14.0'">..\..\frmworkPKC.Web\frmworkPKC.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(MSBuildToolsVersion)' &gt;= '14.0'">
+      <ItemGroup>
+        <Analyzer Include="..\..\..\packages\SonarAnalyzer.CSharp.1.12.0\analyzers\SonarAnalyzer.dll" />
+        <Analyzer Include="..\..\..\packages\SonarAnalyzer.CSharp.1.12.0\analyzers\SonarAnalyzer.CSharp.dll" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="Elmah">
+      <HintPath>..\..\..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\..\..\packages\ServiceStack.Common.4.0.40\lib\net40\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\..\..\packages\ServiceStack.Interfaces.4.0.40\lib\portable-wp80+sl5+net40+win8+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\..\..\packages\ServiceStack.Redis.4.0.40\lib\net40\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\..\..\packages\ServiceStack.Text.4.0.40\lib\net40\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'true' == 'false'">
+      <ItemGroup>
+        <Content Include="NuGet.exe" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'true' == 'true'">
+      <ItemGroup>
+        <Compile Include="Annotations\AspMvcActionAttribute.cs" />
+        <Compile Include="Annotations\AspMvcActionSelectorAttribute.cs" />
+        <Compile Include="Annotations\AspMvcAreaAttribute.cs" />
+        <Compile Include="Annotations\AspMvcControllerAttribute.cs" />
+        <Compile Include="Annotations\AspMvcDisplayTemplateAttribute.cs" />
+        <Compile Include="Annotations\AspMvcEditorTemplateAttribute.cs" />
+        <Compile Include="Annotations\AspMvcMasterAttribute.cs" />
+        <Compile Include="Annotations\AspMvcModelTypeAttribute.cs" />
+        <Compile Include="Annotations\AspMvcPartialViewAttribute.cs" />
+        <Compile Include="Annotations\AspMvcSupressViewErrorAttribute.cs" />
+        <Compile Include="Annotations\AspMvcTemplateAttribute.cs" />
+        <Compile Include="Annotations\AspMvcViewAttribute.cs" />
+        <Compile Include="Annotations\BaseTypeRequiredAttribute.cs" />
+        <Compile Include="Annotations\CanBeNullAttribute.cs" />
+        <Compile Include="Annotations\CannotApplyEqualityOperatorAttribute.cs" />
+        <Compile Include="Annotations\ContractAnnotationAttribute.cs" />
+        <Compile Include="Annotations\HtmlAttributeValueAttribute.cs" />
+        <Compile Include="Annotations\HtmlElementAttributesAttribute.cs" />
+        <Compile Include="Annotations\ImplicitUseKindFlags.cs" />
+        <Compile Include="Annotations\ImplicitUseTarget.cs" />
+        <Compile Include="Annotations\InstantHandleAttribute.cs" />
+        <Compile Include="Annotations\InvokerParameterNameAttribute.cs" />
+        <Compile Include="Annotations\LocalizationRequiredAttribute.cs" />
+        <Compile Include="Annotations\MeansImplicitUseAttribute.cs" />
+        <Compile Include="Annotations\NotifyPropertyChangedInvocatorAttribute.cs" />
+        <Compile Include="Annotations\NotNullAttribute.cs" />
+        <Compile Include="Annotations\PathReferenceAttribute.cs" />
+        <Compile Include="Annotations\PublicApiAttribute.cs" />
+        <Compile Include="Annotations\PureAttribute.cs" />
+        <Compile Include="Annotations\RazorSectionAttribute.cs" />
+        <Compile Include="Annotations\StringFormatMethodAttribute.cs" />
+        <Compile Include="Annotations\UsedImplicitlyAttribute.cs" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Annotations\ServiceAttribute.cs" />
+    <Compile Include="Logging\RedisStorageErrorLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'nlog' != 'none'">
+      <ItemGroup>
+        <Compile Include="Logging\ILogHelper.cs" />
+        <Compile Include="Logging\LoggingData.cs" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'nlog' == 'nlog'">
+      <ItemGroup>
+        <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+          <HintPath>..\..\..\packages\NLog.4.3.10\lib\net45\NLog.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Compile Include="LoggerImplementation\NLogLogger.cs" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'nlog' == 'log4net'">
+      <ItemGroup>
+        <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+          <HintPath>..\..\..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Compile Include="LoggerImplementation\Log4NetLogger.cs" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="'nlog' == 'custom'">
+      <ItemGroup>
+        <Compile Include="LoggerImplementation\CustomLogger.cs" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!--<Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>-->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
